@@ -1,0 +1,36 @@
+{% extends 'news/base.html'%}
+
+{% block content %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>News Feed</h1>
+       </div>
+    </div>
+
+    <div class="container">
+        <a href="{% url 'feed_new' %}" class="btn btn-primary"> New Feed </a>
+    <hr>
+
+      <!-- Example row of columns -->
+      {% for feed in feeds %}
+        <li><a href="{{ feed.url }}">{{ feed.title }}</a></li>
+        {% endfor %}
+
+
+      <hr>
+
+
+      <footer>
+        <p>&copy Django & Bootstrap News Aggregator Website </p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+{% endblock %}
